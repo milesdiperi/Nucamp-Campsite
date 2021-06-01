@@ -6,13 +6,19 @@ import { ConfigureStore } from './redux/configureStore';
 import './App.css';
 
 class App extends Component {
+
     render() {
+
+        const store = ConfigureStore();
+
         return (
-            <BrowserRouter>
-                <div className="App">
-                    <Main />
-                </div>
-            </BrowserRouter>
+            <Provider store={store}>
+          <BrowserRouter>
+              <div className="App">
+                  <Main />
+              </div>
+          </BrowserRouter>
+      </Provider>
         );
     }
 }
